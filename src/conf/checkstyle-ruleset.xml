@@ -1,7 +1,4 @@
 <?xml version="1.0"?>
-<!-- $Id: checkstyle-ruleset.xml 399 2011-03-31 10:09:21Z nmoorcroft $ -->
-<!-- Tier 2 Consulting standard CheckStyle configuration 5/10/2010 -->
-
 <!DOCTYPE module PUBLIC
     "-//Puppy Crawl//DTD Check Configuration 1.2//EN"
     "http://www.puppycrawl.com/dtds/configuration_1_2.dtd">
@@ -15,6 +12,7 @@
   <module name="FileTabCharacter" />
   <module name="SuppressionCommentFilter" />
   <module name="TreeWalker">
+	<property name="cacheFile" value="target/cachefile"/>
     <module name="FileContentsHolder" />
     <module name="JavadocMethod">
       <property name="allowMissingJavadoc" value="true" />

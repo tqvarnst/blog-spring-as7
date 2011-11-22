@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- $Id: findbugs-exclude.xml 7 2011-03-07 17:43:20Z nmoorcroft $ -->
-
 <FindBugsFilter>
   <Match>
     <Class name="~.*" />
