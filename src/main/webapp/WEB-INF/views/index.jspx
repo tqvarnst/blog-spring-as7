@@ -20,7 +20,7 @@
 
   <body>
     <div>
-      <h1><spring:message code="app.name" /></h1>
+      <h1><spring:message code="app.title" /></h1>
     </div>
   </body>
   

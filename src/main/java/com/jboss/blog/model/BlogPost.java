@@ -1,5 +1,6 @@
 package com.jboss.blog.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Basic;
@@ -8,44 +9,48 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Version;
 
 @Entity
-@Table(name = "POST")
-public class Post {
+@Table(name = "BLOG_POST")
+public class BlogPost implements Serializable {
+	private static final long serialVersionUID = -1981822744067616301L;
+
 	@Id
 	@Column(name = "ID")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private long id;
 
 	@Version
 	@Column(name = "VERSION")
 	private int version;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "CREATE_TIME", updatable = false)
-	private Date createDate;
-
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "UPDATE_TIME")
-	private Date updateDate;
+	@Column(name = "CREATE_DATE", updatable = false)
+	private Date timestamp;
 
 	@Basic
 	@Column(name = "TITLE")
 	private String title;
 
 	@Basic
-	@Column(name = "BODY")
+	@Column(name = "BODY", length = 1024)
 	private String body;
+	
+	@ManyToOne
+	@JoinColumn(name="BLOG_ID")
+	private Blog blog;
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
@@ -56,21 +61,13 @@ public class Post {
 	public void setVersion(int version) {
 		this.version = version;
 	}
-
-	public Date getCreateDate() {
-		return createDate;
+	
+	public Date getTimestamp() {
+		return timestamp;
 	}
 
-	public void setCreateDate(Date createDate) {
-		this.createDate = createDate;
-	}
-
-	public Date getUpdateDate() {
-		return updateDate;
-	}
-
-	public void setUpdateDate(Date updateDate) {
-		this.updateDate = updateDate;
+	public void setTimestamp(Date timestamp) {
+		this.timestamp = timestamp;
 	}
 
 	public String getTitle() {
@@ -87,5 +84,13 @@ public class Post {
 
 	public void setBody(String body) {
 		this.body = body;
+	}
+
+	public Blog getBlog() {
+		return blog;
+	}
+
+	public void setBlog(Blog blog) {
+		this.blog = blog;
 	}
 }
