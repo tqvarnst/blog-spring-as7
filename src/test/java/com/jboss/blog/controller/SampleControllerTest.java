@@ -6,11 +6,11 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 public class SampleControllerTest {
-	private SampleController controller = new SampleController();
+	private PostController controller = new PostController();
 	
 	@Test
 	public void get() {
-		final String view = controller.get();
-		assertEquals("sample", view);
+		final String view = controller.create();
+		assertEquals("post/created", view);
 	}
 }

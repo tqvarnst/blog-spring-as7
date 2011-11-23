@@ -25,5 +25,6 @@
 
 	<!-- imports -->
 	<import resource="classpath:/spring/mvc-context.xml" />
+	<import resource="classpath:/spring/persistence-context.xml" />
 </beans>
 

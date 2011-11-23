@@ -22,7 +22,13 @@
   <body>
     <div>
       <h1><spring:message code="app.name" /></h1>
-      <h2>Sample Controller</h2>
+      <h2>Posts</h2>
+      <c:forEach items="${posts}" var="post">
+      	<div style="margin-bottom: 20px">
+      		${post.id} ${post.title}<br/>
+      		${post.body}
+      	</div>
+      </c:forEach>
     </div>
   </body>
   
