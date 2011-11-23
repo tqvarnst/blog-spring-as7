@@ -7,9 +7,7 @@
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
     http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd">
 
-	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
-		<property name="persistenceUnitName" value="blogPU" />
-	</bean>
+	<jee:jndi-lookup id="entityManagerFactory" jndi-name="java:app/EntityManagerFactory"/>
 
 	<bean id="transactionManager"
 		class="org.springframework.transaction.jta.JtaTransactionManager">
