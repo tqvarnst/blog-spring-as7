@@ -1,4 +1,4 @@
-package com.jboss.blog.model;
+package com.jboss.blog.domain;
 
 import java.io.Serializable;
 import java.util.List;
@@ -12,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import javax.persistence.Version;
 
@@ -34,7 +35,8 @@ public class Blog implements Serializable {
 	private String name;
 
 	@OneToMany(mappedBy = "blog", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
-	private List<BlogPost> posts;
+	@OrderBy("timestamp DESC")
+	private List<BlogPost> blogPosts;
 
 	public long getId() {
 		return id;
@@ -60,11 +62,16 @@ public class Blog implements Serializable {
 		this.name = name;
 	}
 
-	public List<BlogPost> getPosts() {
-		return posts;
+	public List<BlogPost> getBlogPosts() {
+		return blogPosts;
 	}
 
-	public void setPosts(List<BlogPost> posts) {
-		this.posts = posts;
+	public void setBlogPosts(List<BlogPost> blogPosts) {
+		this.blogPosts = blogPosts;
+	}
+
+	@Override
+	public String toString() {
+		return "Blog [id=" + id + ", version=" + version + ", name=" + name + ", blogPosts=" + blogPosts + "]";
 	}
 }

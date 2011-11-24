@@ -5,21 +5,19 @@
 <jsp:directive.page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" />
 
 <head>
-<title>Blog JBoss Spring Demo</title>
+<title>Add Blog</title>
 </head>
 
 <body>
-	<c:forEach items="${blogs}" var="blog">
-		<ul>
-			<spring:url value="/${blog.id}" var="blogUrl" />
-			<li><a href="${blogUrl}">${blog.name}</a></li>
-		</ul>
-	</c:forEach>
 
-	<div id="actions">
-		<spring:url value="/add" var="newUrl" />
-		<a href="${newUrl}" class="button">New</a>
-	</div>
+	<form:form method="post" modelAttribute="blog">
+	  	Name: <form:input path="name" /> <button type="submit" class="button">Add Blog</button>
+
+		<div id="actions">
+			<spring:url value="/list" var="backUrl" />
+			<a href="${backUrl}" class="button">Back</a>
+		</div>
+	</form:form>
 </body>
 </html>
 

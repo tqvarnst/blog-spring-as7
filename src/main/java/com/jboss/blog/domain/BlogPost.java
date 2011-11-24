@@ -1,4 +1,4 @@
-package com.jboss.blog.model;
+package com.jboss.blog.domain;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -39,7 +39,7 @@ public class BlogPost implements Serializable {
 	private String title;
 
 	@Basic
-	@Column(name = "BODY", length = 1024)
+	@Column(name = "BODY", length = 2048)
 	private String body;
 	
 	@ManyToOne
