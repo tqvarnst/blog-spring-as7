@@ -230,7 +230,7 @@
 		<profile>
 			<id>openshift</id>
 			<build>
-				<finalName>${project.name}</finalName>
+				<finalName>blog</finalName>
 				<plugins>
 					<plugin>
 						<artifactId>maven-war-plugin</artifactId>
