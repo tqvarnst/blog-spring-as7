@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:spring="http://www.springframework.org/tags" xmlns:security="http://www.springframework.org/security/tags"
+	xmlns:decorator="http://www.opensymphony.com/sitemesh/decorator" xmlns:jsp="http://java.sun.com/JSP/Page">
+
+<jsp:directive.page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" />
+<jsp:output omit-xml-declaration="yes" doctype-root-element="html" doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN"
+	doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" />
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title><spring:message code="app.title" /></title>
+<meta name="viewport" content="user-scalable=no, width=device-width" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<spring:url value='/css/blog.css' var="cssLayout" />
+<link rel="stylesheet" type="text/css" href="${cssLayout}" media="screen and (min-width: 481px)" />
+<spring:url value='/css/blog-iphone.css' var="cssLayoutIphone" />
+<link rel="stylesheet" type="text/css" href="${cssLayoutIphone}" media="only screen and (max-width: 480px)" />
+
+<decorator:head />
+</head>
+<body>
+	<div id="container">
+		<spring:url value="/images/openshift_logo.png" var="logoUrl" />
+		<img alt="OpenShift logo" src="${logoUrl}" />
+		<div id="header">
+			<h1>
+				<decorator:title />
+			</h1>
+		</div>
+
+		<div id="content">
+			<decorator:body />
+		</div>
+
+		<br style="clear: both" />
+	</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:spring="http://www.springframework.org/tags"
+	xmlns:form="http://www.springframework.org/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:ui="urn:jsptagdir:/WEB-INF/tags">
+
+<jsp:directive.page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" />
+
+<head>
+<title>${blog.name}</title>
+</head>
+
+<body>
+	<ul>
+		<c:if test="${empty blog.blogPosts}">
+			No posts!
+		</c:if>
+		<c:forEach items="${blog.blogPosts}" var="blogPost" varStatus="status">
+			<li>
+				<h3>${blogPost.title}</h3>
+				<h5><spring:message code="format.date" arguments="${blogPost.timestamp}" /></h5>
+				${blogPost.body}
+				<c:if test="${not status.last}"><hr/></c:if>
+			</li>
+		</c:forEach>
+	</ul>
+
+	<div id="actions">
+		<spring:url value="/list" var="backUrl" />
+		<a href="${backUrl}" class="button">Back</a>
+
+		<spring:url value="/${blog.id}/add" var="addUrl" />
+		<a href="${addUrl}" class="button">Add Post</a>
+	</div>
+</body>
+</html>
+

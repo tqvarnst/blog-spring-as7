@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:spring="http://www.springframework.org/tags"
+	xmlns:form="http://www.springframework.org/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:ui="urn:jsptagdir:/WEB-INF/tags">
+
+<jsp:directive.page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" />
+
+<head>
+<title>Blog JBoss Spring Demo</title>
+</head>
+
+<body>
+	<c:forEach items="${blogs}" var="blog">
+		<ul>
+			<spring:url value="/${blog.id}" var="blogUrl" />
+			<li><a href="${blogUrl}">${blog.name}</a></li>
+		</ul>
+	</c:forEach>
+
+	<div id="actions">
+		<spring:url value="/add" var="newUrl" />
+		<a href="${newUrl}" class="button">New</a>
+	</div>
+</body>
+</html>
+

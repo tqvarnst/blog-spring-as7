@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:spring="http://www.springframework.org/tags"
+	xmlns:form="http://www.springframework.org/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:ui="urn:jsptagdir:/WEB-INF/tags">
+
+<jsp:directive.page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" />
+
+<head>
+<title>Add Post for ${blogPost.blog.name}</title>
+</head>
+
+<body>
+	<form:form method="post" modelAttribute="blogPost">
+		<table class="new-blog-post-table">
+			<tr>
+				<td valign="top">Title:</td>
+				<td><form:input path="title" /></td>
+			</tr>
+			<tr>
+				<td valign="top">Body:</td>
+				<td><form:textarea path="body" rows="20" cols="50" /></td>
+			</tr>
+			<tr>
+				<td valign="top"></td>
+				<td><button type="submit" class="button">Add Post</button></td>
+			</tr>
+		</table>
+	</form:form>
+
+	<div id="actions">
+		<spring:url value="/${blogPost.blog.id}" var="cancelUrl" />
+		<a href="${cancelUrl}" class="button">Cancel</a>
+	</div>
+</body>
+</html>
+

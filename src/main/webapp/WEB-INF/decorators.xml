@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Id: decorators.xml 7 2011-03-07 17:43:20Z nmoorcroft $ -->
+<decorators defaultdir="/WEB-INF/decorators">
+  <decorator name="template" page="template.jspx">
+    <pattern>/*</pattern>
+  </decorator>
+</decorators>
+

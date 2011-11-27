@@ -1,3 +1,7 @@
+Description
+===========
+Openshift + Spring + JPA 
+
 Repo layout
 =========== 
 deployments/ - location for built wars (Details below)
@@ -127,3 +131,4 @@ variables for username, host and password:
 
 To get a full list of environment variables, simply add a line in your
 .openshift/action_hooks/build script that says "export" and push.
+
