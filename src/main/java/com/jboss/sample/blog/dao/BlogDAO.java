@@ -1,8 +1,8 @@
-package com.jboss.blog.dao;
+package com.jboss.sample.blog.dao;
 
 import java.util.List;
 
-import com.jboss.blog.domain.Blog;
+import com.jboss.sample.blog.domain.Blog;
 
 public interface BlogDAO {
 	List<Blog> getBlogs();

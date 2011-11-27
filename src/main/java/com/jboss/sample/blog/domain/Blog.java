@@ -1,4 +1,4 @@
-package com.jboss.blog.domain;
+package com.jboss.sample.blog.domain;
 
 import java.io.Serializable;
 import java.util.List;

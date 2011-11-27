@@ -1,9 +1,9 @@
-package com.jboss.blog.service;
+package com.jboss.sample.blog.service;
 
 import java.util.List;
 
-import com.jboss.blog.domain.Blog;
-import com.jboss.blog.domain.BlogPost;
+import com.jboss.sample.blog.domain.Blog;
+import com.jboss.sample.blog.domain.BlogPost;
 
 public interface BlogService {
 	List<Blog> getBlogs();

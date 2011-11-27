@@ -1,9 +1,9 @@
-package com.jboss.blog.dao;
+package com.jboss.sample.blog.dao;
 
 import java.util.List;
 
-import com.jboss.blog.domain.Blog;
-import com.jboss.blog.domain.BlogPost;
+import com.jboss.sample.blog.domain.Blog;
+import com.jboss.sample.blog.domain.BlogPost;
 
 public interface BlogPostDAO {
 	void addBlogPost(BlogPost blogPost);

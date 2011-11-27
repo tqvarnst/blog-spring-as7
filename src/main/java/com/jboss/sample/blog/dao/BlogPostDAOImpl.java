@@ -1,4 +1,4 @@
-package com.jboss.blog.dao;
+package com.jboss.sample.blog.dao;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import javax.persistence.criteria.CriteriaQuery;
 
 import org.springframework.stereotype.Repository;
 
-import com.jboss.blog.domain.Blog;
-import com.jboss.blog.domain.BlogPost;
+import com.jboss.sample.blog.domain.Blog;
+import com.jboss.sample.blog.domain.BlogPost;
 
 @Repository
 public class BlogPostDAOImpl implements BlogPostDAO {

@@ -1,4 +1,4 @@
-package com.jboss.blog.controller;
+package com.jboss.sample.blog.controller;
 
 import java.util.Date;
 import java.util.List;
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.jboss.blog.domain.Blog;
-import com.jboss.blog.domain.BlogPost;
-import com.jboss.blog.service.BlogService;
+import com.jboss.sample.blog.domain.Blog;
+import com.jboss.sample.blog.domain.BlogPost;
+import com.jboss.sample.blog.service.BlogService;
 
 @Controller
 @RequestMapping

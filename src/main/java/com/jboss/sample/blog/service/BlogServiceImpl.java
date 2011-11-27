@@ -1,4 +1,4 @@
-package com.jboss.blog.service;
+package com.jboss.sample.blog.service;
 
 import java.util.List;
 
@@ -7,10 +7,10 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.jboss.blog.dao.BlogDAO;
-import com.jboss.blog.dao.BlogPostDAO;
-import com.jboss.blog.domain.Blog;
-import com.jboss.blog.domain.BlogPost;
+import com.jboss.sample.blog.dao.BlogDAO;
+import com.jboss.sample.blog.dao.BlogPostDAO;
+import com.jboss.sample.blog.domain.Blog;
+import com.jboss.sample.blog.domain.BlogPost;
 
 @Service
 @Transactional

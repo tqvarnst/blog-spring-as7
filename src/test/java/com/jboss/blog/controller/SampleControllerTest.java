@@ -11,7 +11,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import com.jboss.blog.dao.BlogDAO;
+import com.jboss.sample.blog.controller.BlogController;
+import com.jboss.sample.blog.dao.BlogDAO;
 
 
 @RunWith(MockitoJUnitRunner.class)
