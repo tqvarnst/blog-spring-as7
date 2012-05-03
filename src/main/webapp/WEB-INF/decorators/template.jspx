@@ -21,8 +21,6 @@
 </head>
 <body>
 	<div id="container">
-		<spring:url value="/images/openshift_logo.png" var="logoUrl" />
-		<img alt="OpenShift logo" src="${logoUrl}" />
 		<div id="header">
 			<h1>
 				<decorator:title />
